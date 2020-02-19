@@ -64,6 +64,10 @@ public class OrderItem implements Serializable {
 		this.price = price;
 	}
 
+	public Double getSubTotal () {
+		return quantity * price;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -87,9 +91,5 @@ public class OrderItem implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
-	}
-	
-	public Double subTotal () {
-		return quantity * price;
 	}
 }
